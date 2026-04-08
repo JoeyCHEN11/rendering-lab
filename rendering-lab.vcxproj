@@ -72,8 +72,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\projects\personal\rendering-lab\external\imgui\backends;C:\projects\personal\rendering-lab\external\imgui;C:\projects\personal\rendering-lab\external\assimp\include;C:\projects\personal\rendering-lab\external\glm\include;C:\projects\personal\rendering-lab\external\glfw\include;C:\projects\personal\rendering-lab\external\glad\include;C:\projects\personal\rendering-lab\external\stb_image;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\projects\personal\rendering-lab\external\assimp\lib;C:\projects\personal\rendering-lab\external\glfw\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)external\imgui\backends;$(SolutionDir)external\imgui;$(SolutionDir)external\assimp\include;$(SolutionDir)external\glm\include;$(SolutionDir)external\glfw\include;$(SolutionDir)external\glad\include;$(SolutionDir)external\stb_image;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)external\assimp\lib;$(SolutionDir)external\glfw\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)external\imgui\backends;$(SolutionDir)external\imgui;$(SolutionDir)external\assimp\include;$(SolutionDir)external\glm\include;$(SolutionDir)external\glfw\include;$(SolutionDir)external\glad\include;$(SolutionDir)external\stb_image;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)external\assimp\lib;$(SolutionDir)external\glfw\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -133,6 +137,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;assimp-vc145-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y /d "$(ProjectDir)external\assimp\bin\assimp-vc145-mtd.dll" "$(TargetDir)"</Command>
@@ -148,8 +153,10 @@
     <Image Include="assets\textures\wall.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\shaders\backpack.frag" />
-    <None Include="assets\shaders\backpack.vert" />
+    <None Include="assets\shaders\toon.frag" />
+    <None Include="assets\shaders\toon.vert" />
+    <None Include="assets\shaders\phong.frag" />
+    <None Include="assets\shaders\phong.vert" />
     <None Include="assets\shaders\light.frag" />
     <None Include="assets\shaders\light.vert" />
   </ItemGroup>
@@ -171,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\Light.h" />
     <ClInclude Include="src\Mesh.h" />
     <ClInclude Include="src\Model.h" />
     <ClInclude Include="src\Shader.h" />

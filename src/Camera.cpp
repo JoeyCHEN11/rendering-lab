@@ -82,10 +82,17 @@ void Camera::ProcessMouseMovement(float xoffset, float yoffset, bool constrainPi
 void Camera::ProcessMouseScroll(float yoffset)
 {
 	Fov -= (float)yoffset;
-	if (Fov < 1.0f)
-		Fov = 1.0f;
-	if (Fov > 45.0f)
-		Fov = 45.0f;
+	if (Fov < CAM_FOV_MIN)
+		Fov = CAM_FOV_MIN;
+	if (Fov > CAM_FOV_MAX)
+		Fov = CAM_FOV_MAX;
+}
+
+void Camera::updateCameraConfig(const CameraConfig& config)
+{
+	MovementSpeed = config.movementSpeed;
+	MouseSensitivity = config.mouseSensitivity;
+	Fov = config.fov;
 }
 
 

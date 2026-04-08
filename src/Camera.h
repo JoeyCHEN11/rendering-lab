@@ -4,6 +4,14 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+static constexpr float YAW		   = 0.0f;
+static constexpr float PITCH	   = 0.0f;
+static constexpr float SPEED	   = 2.5f;
+static constexpr float SENSITIVITY = 0.075f;
+static constexpr float ZOOM		   = 45.0f;
+static constexpr float CAM_FOV_MIN = 1.0f;
+static constexpr float CAM_FOV_MAX = 90.0f;
+
 
 enum Camera_Movement
 {
@@ -15,15 +23,17 @@ enum Camera_Movement
 	DOWN
 };
 
+struct CameraConfig
+{
+	float movementSpeed = SPEED;
+	float mouseSensitivity = SENSITIVITY;
+	float fov = ZOOM;
+};
+
 class Camera
 {
 public:
 	// Default camera values
-	static constexpr float YAW		   = 0.0f;
-	static constexpr float PITCH	   = 0.0f;
-	static constexpr float SPEED	   = 2.5f;
-	static constexpr float SENSITIVITY = 0.1f;
-	static constexpr float ZOOM		   = 45.0f;
 	// camera Attributes
 	glm::vec3 Position;
 	glm::vec3 Front;
@@ -57,6 +67,8 @@ public:
 	void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
 
 	void ProcessMouseScroll(float yoffset);
+
+	void updateCameraConfig(const CameraConfig& config);
 
 private:
 

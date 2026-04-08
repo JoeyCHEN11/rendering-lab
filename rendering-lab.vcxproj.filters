@@ -59,16 +59,22 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\shaders\backpack.frag">
+    <None Include="assets\shaders\phong.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="assets\shaders\backpack.vert">
+    <None Include="assets\shaders\phong.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="assets\shaders\light.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="assets\shaders\light.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\toon.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="assets\shaders\toon.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
@@ -127,6 +133,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
