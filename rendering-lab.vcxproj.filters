@@ -34,6 +34,9 @@
     <Filter Include="external\imgui\backends">
       <UniqueIdentifier>{fa1fc996-5e85-46b4-9692-39d8cb3d8a10}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Icons">
+      <UniqueIdentifier>{89154d45-d9b9-40bb-bb5e-9a4349c77ff9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\textures\lighting_maps_specular_color.png">
@@ -56,6 +59,12 @@
     </Image>
     <Image Include="assets\textures\container2_specular.png">
       <Filter>Resource Files\Textures</Filter>
+    </Image>
+    <Image Include="assets\icons\game-icons--soap-experiment.ico">
+      <Filter>Resource Files\Icons</Filter>
+    </Image>
+    <Image Include="assets\icons\game-icons--soap-experiment.png">
+      <Filter>Resource Files\Icons</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -138,5 +147,13 @@
     <ClInclude Include="src\Light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="rendering-lab.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

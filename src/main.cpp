@@ -107,6 +107,19 @@ int main()
 		glfwTerminate();
 		return -1;
 	}
+
+	// set window icon
+	int width, height, nrChannels;
+	unsigned char* pixels = stbi_load("assets/icons/game-icons--soap-experiment.png", &width, &height, &nrChannels, 4);
+	if (pixels == nullptr)
+		std::cout << "Failed to load icon image" << std::endl;
+	GLFWimage images[1];
+	images[0].width = width;
+	images[0].height = height;
+	images[0].pixels = pixels;
+	glfwSetWindowIcon(window, 1, images);
+	stbi_image_free(pixels);
+
 	glfwMakeContextCurrent(window);
 	// set behavior of resizing the window
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
