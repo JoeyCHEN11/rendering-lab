@@ -65,9 +65,14 @@ A real-time rendering laboratory, demonstrating basic rendering techniques and c
 ### Technical References
 
 - [Learn OpenGL](https://learnopengl.com/)
+- [Roystan&#39;s Toon Shader](https://roystan.net/articles/toon-shader/)
 
 ### 3D Models
 
 - [Alicia Solid](https://3d.nicovideo.jp/alicia/)
 - [Survival Guitar Backpack](https://sketchfab.com/3d-models/survival-guitar-backpack-799f8c4511f84fab8c3f12887f7e6b36)
 - [Sphere](https://sketchfab.com/3d-models/sphere-b31b12ffa93a40f48c9d991b6f168f4d)
+
+### Icons
+
+- [Game Icons](https://github.com/game-icons/icons)
